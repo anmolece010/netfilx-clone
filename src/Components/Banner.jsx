@@ -1,7 +1,25 @@
-import React from "react";
+import axios from "../axios/axios";
+import React, { useState, useEffect } from "react";
 import "./banner.css";
+import requests from "../axios/Request";
 
 function Banner() {
+  const [movie, setMovie] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const request = await axios.get(requests.fetchNetflixOriginals);
+      setMovie(
+        request.data.results[
+          Math.floor(Math.random() * request.data.results.length - 1)
+        ]
+      );
+      return request;
+    }
+
+    fetchData();
+  }, []);
+  console.log(movie);
   function truncate(string, n) {
     return string?.length > n ? string.substr(0, n - 1) + "..." : string;
   }
@@ -10,22 +28,23 @@ function Banner() {
     <header
       className="banner"
       style={{
-        backgroundImage: `url('https://res.cloudinary.com/practicaldev/image/fetch/s--THrf5Yjw--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/n6brz4p7iq7j1mulo1nv.jpg')`,
-        backgroundPosition: "center",
+        backgroundSize: "cover",
+        backgroundImage: `url('https://image.tmdb.org/t/p/original/${movie?.backdrop_path}')`,
+        backgroundPosition: "center center",
       }}
     >
       <div className="banner__contents">
-        <h1 className="banner__title">Movie Name</h1>
+        <h1 className="banner__title">
+          {movie?.title ||
+            movie?.original_title ||
+            movie?.name ||
+            movie?.original_name}
+        </h1>
         <div className="banner_buttons">
           <button className="banner__button">Play</button>
           <button className="banner__button">My List</button>
         </div>
-        <h1 className="banner_description">
-          {truncate(
-            `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum optio dolorum dolorem debitis iusto. A explicabo dolore commodi quae, eius odit saepe impedit, repellendus harum ab iure praesentium suscipit reiciendis id soluta sit, consectetur dolor iste est qui corrupti. Officia qui atque architecto perferendis ratione aliquam molestias, ipsam dolorum perspiciatis accusantium, delectus inventore consequuntur! Amet, earum possimus ut dolorum quaerat, sapiente reprehenderit pariatur dolore sint incidunt nemo reiciendis ipsum asperiores cumque culpa odit saepe consequatur, vitae dolorem natus. Placeat laudantium quaerat ea dolor quo quis reiciendis nulla aperiam eveniet veniam quod repudiandae unde tenetur magnam, rerum dolorum esse explicabo autem nam eligendi iste neque. Voluptate repudiandae vel pariatur, voluptates, vero quam provident est assumenda quis laboriosam autem esse! Impedit vitae modi quidem. Praesentium doloremque ea nesciunt, exercitationem, eius unde quisquam ipsam maiores libero alias officia veniam nulla fuga. Impedit accusamus iure officiis totam quam vero soluta ipsam quibusdam omnis quo ab minima debitis qui accusantium laudantium voluptate quos, alias inventore nemo? Nihil, autem maxime nesciunt quibusdam sed cum doloribus placeat, nostrum at dicta perspiciatis consectetur dolore. Blanditiis explicabo, rem aperiam velit laudantium repellat fugit odio perferendis expedita delectus. Iusto ipsum animi cupiditate laborum debitis ex modi asperiores possimus quae doloribus?`,
-            150
-          )}
-        </h1>
+        <h1 className="banner_description">{truncate(movie.overview, 250)}</h1>
       </div>
       <div className="banner--fadeBottom" />
     </header>
