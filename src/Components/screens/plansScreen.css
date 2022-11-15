@@ -1,6 +1,8 @@
 .PlansScreen > h4 {
   margin-bottom: 20px;
   margin-top: 5%;
+  font-size: 1rem;
+  font-weight: 400;
 }
 
 .plansScreen__plans {
@@ -13,6 +15,10 @@
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 20px;
+}
+.plans > h3 {
+  font-size: 1rem;
+  font-weight: 400;
 }
 
 .plansScreen__button {

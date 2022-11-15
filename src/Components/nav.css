@@ -18,6 +18,7 @@
 }
 
 .nav__logo {
+  content: url("./images/netflix_logo2.png");
   position: fixed;
   top: 20px;
   left: 0;
@@ -28,6 +29,7 @@
 }
 
 .nav__avatar {
+  content: url("./images/profile_logo.png");
   position: fixed;
   right: 20px;
   width: 30px;
