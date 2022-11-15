@@ -18,7 +18,7 @@ function Row({ title, fetchUrl, isLargeRow = false }) {
     fetchData();
   }, [fetchUrl]);
 
-  console.log(movies);
+  // console.log(movies);
 
   const handleTrailer = (movie) => {
     if (trailerUrl) {
@@ -49,6 +49,7 @@ function Row({ title, fetchUrl, isLargeRow = false }) {
           (movie) =>
             ((isLargeRow && movie.poster_path) ||
               (!isLargeRow && movie.backdrop_path)) && (
+              // <div>
               <img
                 onClick={() => handleTrailer(movie)}
                 className={`row__poster ${isLargeRow && "row_posterLarge"}`}
@@ -58,6 +59,10 @@ function Row({ title, fetchUrl, isLargeRow = false }) {
                 }`}
                 alt={movie.name}
               />
+              // <h4 className="row_name">
+              //   {movie.original_name || movie.original_title}
+              // </h4>
+              // </div>
             )
         )}
       </div>

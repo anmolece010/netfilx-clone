@@ -39,8 +39,8 @@ function App() {
           <LoginScreen />
         ) : (
           <Routes>
+            <Route path="/" exact element={<HomeScreen />} />
             <Route path="/profile" element={<ProfileScreen />} />
-            <Route path="/" element={<HomeScreen />} />
           </Routes>
         )}
       </Router>

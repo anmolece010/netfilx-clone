@@ -4,7 +4,9 @@
 }
 
 .row__posters {
+  position: relative;
   display: flex;
+  flex-direction: row;
   overflow-y: hidden;
   overflow-x: scroll;
   padding: 20px;
@@ -15,6 +17,7 @@
 }
 
 .row__poster {
+  /* width: 165px; */
   max-height: 100px;
   object-fit: contain;
   margin-right: 10px;
@@ -27,6 +30,10 @@
   opacity: 1;
 }
 
+/* .row_name {
+  padding: 10px 10px;
+  text-align: center;
+} */
 .row_posterLarge {
   max-height: 250px;
 }

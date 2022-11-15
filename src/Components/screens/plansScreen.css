@@ -1,6 +1,6 @@
 .PlansScreen > h4 {
   margin-bottom: 20px;
-  margin-top: 5%;
+  margin-top: 3%;
   font-size: 1rem;
   font-weight: 400;
 }
@@ -19,6 +19,21 @@
 .plans > h3 {
   font-size: 1rem;
   font-weight: 400;
+  opacity: 0.7;
+}
+
+.plans > h3 > h4 {
+  font-size: 0.9rem;
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+.plans > h3:hover {
+  opacity: 1;
+}
+
+.plans > h3 > h4:hover {
+  opacity: 1;
 }
 
 .plansScreen__button {
