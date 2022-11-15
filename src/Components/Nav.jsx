@@ -25,6 +25,7 @@ function Nav() {
           className="nav__logo "
           alt="netflix"
         />
+        <h3 className="project__creation">Made by Anmol Gupta</h3>
         <img
           onClick={() => history("/profile")}
           className="nav__avatar "

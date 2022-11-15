@@ -40,3 +40,10 @@
 .nav__black {
   background-color: #111;
 }
+
+.project__creation {
+  margin-left: 43%;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
