@@ -1,0 +1,32 @@
+.PlansScreen > h4 {
+  margin-bottom: 20px;
+  margin-top: 5%;
+}
+
+.plansScreen__plans {
+  display: flex;
+  flex-direction: column;
+}
+
+.plans {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.plansScreen__button {
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #e50914;
+  border: none;
+  cursor: pointer;
+}
+
+.plansScreen__button1 {
+  padding: 10px 20px;
+  color: #fff;
+  background-color: gray;
+  border: none;
+  cursor: pointer;
+}
